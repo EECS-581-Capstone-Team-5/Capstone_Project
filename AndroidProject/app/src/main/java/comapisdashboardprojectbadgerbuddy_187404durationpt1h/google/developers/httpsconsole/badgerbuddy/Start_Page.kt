@@ -22,7 +22,7 @@ class Start_Page : AppCompatActivity() {
         }
 
         // Example of a call to a native method
-        sample_text.text = stringFromJNI()
+        //sample_text.text = stringFromJNI()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
