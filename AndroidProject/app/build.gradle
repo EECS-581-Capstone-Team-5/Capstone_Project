@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy"
+        applicationId "capstone18_05.google.developers.httpsconsole.badgerbuddy"
         minSdkVersion 15
         targetSdkVersion 15
         versionCode 1

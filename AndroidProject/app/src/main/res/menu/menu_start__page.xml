@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy.Start_Page">
+    tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.Start_Page">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

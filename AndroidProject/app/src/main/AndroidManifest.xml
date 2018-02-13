@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy">
+    package="capstone18_05.google.developers.httpsconsole.badgerbuddy">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Start_Page"
+            android:name="capstone18_05.google.developers.httpsconsole.badgerbuddy.Start_Page"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -1,4 +1,4 @@
-package comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy
+package capstone18_05.google.developers.httpsconsole.badgerbuddy
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy", appContext.packageName)
+        assertEquals("capstone18_05.google.developers.httpsconsole.badgerbuddy", appContext.packageName)
     }
 }

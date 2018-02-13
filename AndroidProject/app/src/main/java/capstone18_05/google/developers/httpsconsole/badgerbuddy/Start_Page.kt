@@ -1,13 +1,9 @@
-package comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy
+package capstone18_05.google.developers.httpsconsole.badgerbuddy
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-
-import kotlinx.android.synthetic.main.activity_start__page.*
-import kotlinx.android.synthetic.main.content_start__page.*
 
 class Start_Page : AppCompatActivity() {
 

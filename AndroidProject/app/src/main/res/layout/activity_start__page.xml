@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy.Start_Page">
+    tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.Start_Page">
 
     <EditText
         android:id="@+id/editText3"

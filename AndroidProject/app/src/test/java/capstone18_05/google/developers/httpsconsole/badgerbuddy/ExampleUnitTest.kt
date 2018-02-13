@@ -1,4 +1,4 @@
-package comapisdashboardprojectbadgerbuddy_187404durationpt1h.google.developers.httpsconsole.badgerbuddy
+package capstone18_05.google.developers.httpsconsole.badgerbuddy
 
 import org.junit.Test
 
