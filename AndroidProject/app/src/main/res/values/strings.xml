@@ -6,4 +6,8 @@
     <string name="button_send">Send</string>
     <string name="button">Button</string>
     <string name="name">Name</string>
+    <string name="title_activity_login__page">Login_Page</string>
+    <string name="title_activity_start__page">Start_Page</string>
+    <string name="login_username_hint">Username</string>
+    <string name="login_password_hint">Password</string>
 </resources>
