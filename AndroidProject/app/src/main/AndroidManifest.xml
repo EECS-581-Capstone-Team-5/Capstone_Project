@@ -31,6 +31,9 @@
         <activity
             android:name=".CreateAccount"
             android:parentActivityName=".StartPage" />
+        <activity
+            android:name=".LocationSelection"
+            android:label="Select Location" />
     </application>
 
 </manifest>
