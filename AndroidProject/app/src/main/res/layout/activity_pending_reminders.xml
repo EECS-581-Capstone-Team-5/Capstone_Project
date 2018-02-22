@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.PendingReminders">
+
+    <ScrollView
+        android:id="@+id/pending_reminders_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/example_pending_reminder2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reminder_name2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name: Name of Reminder"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reminder_description2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description: This is an example of a reminder sent by another user."
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/reminder_sent_by2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sent By: Username"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/reminder_buttons2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/accept_button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Accept" />
+
+                    <Button
+                        android:id="@+id/reject_button2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reject" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/example_pending_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reminder_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name: Name of Reminder"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reminder_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description: This is an example of a reminder sent by another user."
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/reminder_sent_by"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sent By: Username"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/reminder_buttons"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/accept_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Accept" />
+
+                    <Button
+                        android:id="@+id/reject_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reject" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/example_pending_reminder3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reminder_name3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name: Name of Reminder"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reminder_description3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description: This is an example of a reminder sent by another user."
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/reminder_sent_by3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sent By: Username"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/reminder_buttons3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/accept_button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Accept" />
+
+                    <Button
+                        android:id="@+id/reject_button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reject" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buddy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buddies" />
+
+        <Button
+            android:id="@+id/reminder_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reminders" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

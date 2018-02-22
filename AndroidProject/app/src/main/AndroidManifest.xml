@@ -34,6 +34,10 @@
         <activity
             android:name=".LocationSelection"
             android:label="Select Location" />
+        <activity
+            android:name=".PendingReminders"
+            android:label="Pending Reminders"
+        />
     </application>
 
 </manifest>
