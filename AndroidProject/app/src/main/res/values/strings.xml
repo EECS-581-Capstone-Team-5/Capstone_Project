@@ -26,4 +26,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="search_label">Search</string>
+    <string name="search_hint">Search Me</string>
+    <string name="search_cancel">Cancel Search</string>
+    <string name="search_name">Buddy Name</string>
+    <string name="search_add">Add</string>
 </resources>

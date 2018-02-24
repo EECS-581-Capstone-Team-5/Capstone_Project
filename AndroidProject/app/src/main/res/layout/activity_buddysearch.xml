@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SearchPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySearch"
+    tools:layout_editor_absoluteY="81dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/BuddySearch"
+        android:layout_width="384dp"
+        android:layout_height="458dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/NavButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <SearchView
+            android:id="@+id/Search_Bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_hint"
+            android:label="@string/search_label" />
+
+        <ScrollView
+            android:id="@+id/Buddies_Searched"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:id="@+id/Example_Buddy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/BuddyName"
+                    android:layout_width="297dp"
+                    android:layout_height="50dp"
+                    android:text="@string/search_name"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/AddBud"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_add" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/NavButton"
+        android:layout_width="384dp"
+        android:layout_height="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintTop_toBottomOf="@id/Buddies_Searched">
+
+        <Button
+            android:id="@+id/CancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/search_cancel" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
