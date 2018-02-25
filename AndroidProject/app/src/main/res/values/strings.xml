@@ -26,4 +26,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="new_reminder_title">Create New Reminder</string>
+    <string name="new_reminder_name">Name:</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="timeframe">Time</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="edit_prompt">Edit Reminder Description</string>
+    <string name="checkbox_blank">Do Not Set</string>
+    <string name="set_location">Set Location</string>
+    <string name="set_time">Set Time</string>
 </resources>
