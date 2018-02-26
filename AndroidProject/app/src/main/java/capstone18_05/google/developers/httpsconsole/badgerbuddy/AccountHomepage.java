@@ -13,10 +13,17 @@ public class AccountHomepage extends AppCompatActivity {
         setContentView(R.layout.activity_acchome);
     }
 
+    public void onBuddies(View view) { startActivity(new Intent(this, BuddySearch.class)); }
+
     public void onMakeNewRem(View view)
     {
         startActivity(new Intent(this, CreateReminders.class));
     }
+
+    public void onPending(View view) { startActivity(new Intent(this, PendingReminders.class)); }
+    
+    public void onLogOut(View view) { finish(); }
+
 
 
 }

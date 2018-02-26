@@ -44,4 +44,7 @@
     <string name="search_name">Buddy Name</string>
     <string name="search_add">Add</string>
     <string name="make_new_rem">New Reminder</string>
+    <string name="logout">Log Out</string>
+    <string name="buddy_search">My Buddies</string>
+    <string name="pending_button">My Reminders</string>
 </resources>
