@@ -38,7 +38,8 @@
             android:name=".PendingReminders"
             android:label="Pending Reminders" />
         <activity android:name=".CreateReminders" />
-        <activity android:name=".AccountHomepage"></activity>
+        <activity android:name=".AccountHomepage" />
+        <activity android:name=".RemindersScreen"></activity>
     </application>
 
 </manifest>

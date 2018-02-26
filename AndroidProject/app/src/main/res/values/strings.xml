@@ -47,4 +47,10 @@
     <string name="logout">Log Out</string>
     <string name="buddy_search">My Buddies</string>
     <string name="pending_button">My Reminders</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="buddies">Buddies</string>
+    <string name="reminder_name">Reminder Name</string>
+    <string name="reminder_description">Reminder Description</string>
+    <string name="reminder_location">reminder Location</string>
+    <string name="remove">Remove</string>
 </resources>
