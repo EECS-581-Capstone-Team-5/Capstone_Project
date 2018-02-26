@@ -23,7 +23,7 @@
             android:layout_width="87dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/add_reminder"
+            android:text="Add Reminder"
             android:visibility="visible" />
 
         <Button
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/buddies"
+            android:text="Buddies"
             android:visibility="visible" />
 
     </LinearLayout>
@@ -66,7 +66,7 @@
                     android:id="@+id/reminder_name2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_name"
+                    android:text="Reminder Name"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -75,14 +75,14 @@
                     android:id="@+id/reminder_description2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_description"
+                    android:text="Reminder Description"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/reminder_location2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_location"
+                    android:text="Reminder Location"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -97,7 +97,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/remove" />
+                        android:text="Remove" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -113,7 +113,7 @@
                     android:id="@+id/reminder_name3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_name"
+                    android:text="Reminder Name"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -122,14 +122,14 @@
                     android:id="@+id/reminder_description3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_description"
+                    android:text="Reminder Description"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/reminder_location3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_location"
+                    android:text="Reminder Location"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -144,7 +144,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/remove" />
+                        android:text="Remove" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -160,7 +160,7 @@
                     android:id="@+id/reminder_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_name"
+                    android:text="Reminder Name"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -169,14 +169,14 @@
                     android:id="@+id/reminder_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_description"
+                    android:text="Reminder Description"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/reminder_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_location"
+                    android:text="Reminder Location"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -191,7 +191,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/remove" />
+                        android:text="Remove" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -207,7 +207,7 @@
                     android:id="@+id/reminder_name1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_name"
+                    android:text="Reminder Name"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -216,14 +216,14 @@
                     android:id="@+id/reminder_description1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_description"
+                    android:text="Reminder Description"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/reminder_location1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/reminder_location"
+                    android:text="Reminder Location"
                     android:textSize="18sp" />
 
                 <LinearLayout
@@ -238,7 +238,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/remove" />
+                        android:text="Remove" />
 
                 </LinearLayout>
             </LinearLayout>
