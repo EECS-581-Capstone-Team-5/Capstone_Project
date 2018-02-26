@@ -22,7 +22,7 @@ public class AccountHomepage extends AppCompatActivity {
         startActivity(new Intent(this, CreateReminders.class));
     }
 
-    public void onPending(View view) { startActivity(new Intent(this, PendingReminders.class)); }
+    public void onReminders(View view) { startActivity(new Intent(this, RemindersScreen.class)); }
     
     public void onLogOut(View view) { finish(); }
 
