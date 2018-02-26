@@ -13,7 +13,9 @@ public class AccountHomepage extends AppCompatActivity {
         setContentView(R.layout.activity_acchome);
     }
 
-    public void onBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
+    public void onBuddies(View view) { startActivity(new Intent(this, BuddySearch.class)); }
+
+    public void myBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
 
     public void onMakeNewRem(View view)
     {
