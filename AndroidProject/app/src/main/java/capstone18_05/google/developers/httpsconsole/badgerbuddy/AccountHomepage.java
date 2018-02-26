@@ -15,14 +15,14 @@ public class AccountHomepage extends AppCompatActivity {
 
     public void onBuddies(View view) { startActivity(new Intent(this, BuddySearch.class)); }
 
-    public void myBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
-
     public void onMakeNewRem(View view)
     {
         startActivity(new Intent(this, CreateReminders.class));
     }
 
-    public void onReminders(View view) { startActivity(new Intent(this, RemindersScreen.class)); }
+    public void onPending(View view) { startActivity(new Intent(this, PendingReminders.class)); }
+
+    public void onMyBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
     
     public void onLogOut(View view) { finish(); }
 
