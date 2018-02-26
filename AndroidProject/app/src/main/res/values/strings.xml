@@ -47,4 +47,5 @@
     <string name="logout">Log Out</string>
     <string name="buddy_search">My Buddies</string>
     <string name="pending_button">My Reminders</string>
+    <string name="buddy_name">Buddy: Name of Buddy</string>
 </resources>
