@@ -21,7 +21,7 @@ public class StartPage extends AppCompatActivity {
 
     public void onLoginClick(View view)
     {
-        startActivity(new Intent(this, AccountHomepage.class));
+        startActivity(new Intent(this, AccountLogin.class));
     }
 
 

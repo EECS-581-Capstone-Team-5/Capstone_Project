@@ -3,6 +3,8 @@ package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -16,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -25,6 +28,13 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,9 +107,9 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
-        if (mAuthTask != null) {
-            return;
-        }
+        //if (mAuthTask != null) {
+            //return;
+        //}
 
         // Reset errors.
         mEmailView.setError(null);
@@ -138,19 +148,66 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            // Attempt to login with entered credentials.
+            authorizationCheck(email, password);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
         }
     }
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        return true;
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return true;
+    }
+
+    private void authorizationCheck(String uName, String pWord)
+    {
+        Response.Listener<String> r_Listener = new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try
+                {
+                    JSONObject j_Object = new JSONObject(response);
+                    boolean success = false;
+
+                    if(j_Object.has("success"))
+                        success = j_Object.getBoolean("success");
+
+                    if(success)
+                    {
+                        Intent intent = new Intent(AccountLogin.this, AccountHomepage.class);
+                        showProgress(false);
+                        AccountLogin.this.startActivity(intent);
+                        AccountLogin.this.finish();
+                    }
+                    else
+                    {
+                        AlertDialog.Builder b = new AlertDialog.Builder(AccountLogin.this);
+                        b.setMessage("Login Failed").setNegativeButton("Retry", null).create().show();
+                        showProgress(false);
+                    }
+                }
+                catch (JSONException e)
+                {
+                    e.printStackTrace();
+                    AlertDialog.Builder b = new AlertDialog.Builder(AccountLogin.this);
+                    b.setMessage(e.getMessage()).setNegativeButton("Retry", null).create().show();
+                    showProgress(false);
+                }
+            }
+        };
+
+        LoginRequest l_Rquest = new LoginRequest(uName, pWord, r_Listener);
+
+        RequestQueue r_queue = Volley.newRequestQueue(AccountLogin.this);
+
+        r_queue.add(l_Rquest);
+
     }
 
     /**
