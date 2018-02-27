@@ -31,16 +31,12 @@
         <activity
             android:name=".CreateAccount"
             android:parentActivityName=".StartPage" />
-        <activity
-            android:name=".LocationSelection"
-            android:label="Select Location" />
-        <activity
-            android:name=".PendingReminders"
-            android:label="Pending Reminders" />
         <activity android:name=".CreateReminders" />
         <activity android:name=".AccountHomepage" />
         <activity android:name=".Buddies_Screen" />
         <activity android:name=".RemindersScreen"></activity>
+        <activity android:name=".PendingReminders"/>
+        <activity android:name=".LocationSelection"/>
     </application>
 
 </manifest>
