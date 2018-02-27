@@ -52,4 +52,6 @@
     <!-- Strings related to login -->
     <string name="buddy_name">Buddy: Name of Buddy</string>
     <string name="button_delete">Delete</string>
+    <string name="button_add">Add Buddy</string>
+    <string name="button_reminder_page">Reminders Page</string>
 </resources>
