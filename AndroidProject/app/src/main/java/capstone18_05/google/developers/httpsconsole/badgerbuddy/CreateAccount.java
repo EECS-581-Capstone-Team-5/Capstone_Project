@@ -56,10 +56,10 @@ public class CreateAccount extends AppCompatActivity {
                     public void onResponse(String response) {
                         try
                         {
-                            JSONObject j_Object = new JSONObject(response);
-                            boolean success = j_Object.getBoolean("success");
+                            //JSONObject j_Object = new JSONObject(response);
+                            //boolean success = j_Object.getBoolean("success");
 
-                            if(success)
+                            if(response.equals("true"))
                             {
                                 Intent intent = new Intent(CreateAccount.this, AccountLogin.class);
                                 CreateAccount.this.startActivity(intent);
@@ -68,16 +68,17 @@ public class CreateAccount extends AppCompatActivity {
                             }
                             else
                             {
+                                String errorMessage = "Username already in use.";
                                 AlertDialog.Builder b = new AlertDialog.Builder(CreateAccount.this);
-                                b.setMessage("Registration Failed").setNegativeButton("Retry", null).create().show();
+                                b.setMessage(errorMessage).setNegativeButton("Retry", null).create().show();
                                 showProgress(false);
                             }
                         }
-                        catch (JSONException e)
+                        catch (Exception e)
                         {
                             //e.printStackTrace();
                             AlertDialog.Builder b = new AlertDialog.Builder(CreateAccount.this);
-                            b.setMessage("Registration Failed").setNegativeButton("Retry", null).create().show();
+                            b.setMessage(e.getMessage()).setNegativeButton("Retry", null).create().show();
                             showProgress(false);
                         }
                     }
