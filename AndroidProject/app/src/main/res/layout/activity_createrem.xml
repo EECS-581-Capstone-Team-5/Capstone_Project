@@ -1,187 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    android:id="@+id/newRemScrollView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.CreateReminders">
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/newRemCon1"
+
+    <ScrollView
+        android:id="@+id/newRemScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="376dp">
 
-        <TextView
-            android:id="@+id/newReminderTitle"
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/newRemCon1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/new_reminder_title"
-            android:textAppearance="@android:style/TextAppearance.Material.Large"
-            android:textSize="30sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/newReminderName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:text="@string/new_reminder_name"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
-            app:layout_constraintTop_toBottomOf="@+id/newReminderTitle" />
+            <TextView
+                android:id="@+id/newReminderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/new_reminder_title"
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/newRemNameField"
-            android:layout_width="214dp"
-            android:layout_height="57dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="@+id/newReminderName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.363"
-            app:layout_constraintStart_toEndOf="@+id/newReminderName"
-            app:layout_constraintTop_toTopOf="@+id/newReminderName"
-            app:layout_constraintVertical_bias="0.571" />
+            <TextView
+                android:id="@+id/newReminderName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="@string/new_reminder_name"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
+                app:layout_constraintTop_toBottomOf="@+id/newReminderTitle" />
 
-        <TextView
-            android:id="@+id/newReminderDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/description"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
-            app:layout_constraintTop_toBottomOf="@+id/newRemNameField" />
+            <EditText
+                android:id="@+id/newRemNameField"
+                android:layout_width="214dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                app:layout_constraintBottom_toBottomOf="@+id/newReminderName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.363"
+                app:layout_constraintStart_toEndOf="@+id/newReminderName"
+                app:layout_constraintTop_toTopOf="@+id/newReminderName"
+                app:layout_constraintVertical_bias="0.571" />
 
-        <EditText
-            android:id="@+id/newRemDescField"
-            android:layout_width="288dp"
-            android:layout_height="117dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:singleLine="true"
-            android:text="@string/edit_prompt"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/newReminderDesc"
-            app:layout_constraintTop_toBottomOf="@+id/newReminderDesc" />
+            <TextView
+                android:id="@+id/newReminderDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/description"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
+                app:layout_constraintTop_toBottomOf="@+id/newRemNameField" />
 
-        <TextView
-            android:id="@+id/newReminderLoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/location"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
-            app:layout_constraintTop_toBottomOf="@+id/newRemDescField" />
+            <EditText
+                android:id="@+id/newRemDescField"
+                android:layout_width="288dp"
+                android:layout_height="117dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
+                android:ems="10"
+                android:hint="@string/edit_prompt"
+                android:inputType="textPersonName"
+                android:selectAllOnFocus="false"
+                android:singleLine="false"
+                android:textAlignment="viewStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/newReminderDesc"
+                app:layout_constraintTop_toBottomOf="@+id/newReminderDesc" />
 
-        <Button
-            android:id="@+id/newRemLocButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/set_location"
-            app:layout_constraintStart_toStartOf="@+id/newReminderLoc"
-            app:layout_constraintTop_toBottomOf="@+id/newReminderLoc" />
+            <TextView
+                android:id="@+id/newReminderLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/location"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
+                app:layout_constraintTop_toBottomOf="@+id/newRemDescField" />
 
-        <CheckBox
-            android:id="@+id/newRemLocCheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/checkbox_blank"
-            app:layout_constraintBottom_toBottomOf="@+id/newRemLocButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/newRemLocButton"
-            app:layout_constraintTop_toTopOf="@+id/newRemLocButton" />
+            <Button
+                android:id="@+id/newRemLocButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_location"
+                app:layout_constraintStart_toStartOf="@+id/newReminderLoc"
+                app:layout_constraintTop_toBottomOf="@+id/newReminderLoc" />
 
-        <TextView
-            android:id="@+id/newReminderTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/timeframe"
-            android:textAppearance="@android:style/TextAppearance.Material.Medium"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
-            app:layout_constraintTop_toBottomOf="@+id/newRemLocButton" />
+            <CheckBox
+                android:id="@+id/newRemLocCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/checkbox_blank"
+                app:layout_constraintBottom_toBottomOf="@+id/newRemLocButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/newRemLocButton"
+                app:layout_constraintTop_toTopOf="@+id/newRemLocButton" />
 
-        <Button
-            android:id="@+id/newRemTimeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/set_time"
-            app:layout_constraintStart_toStartOf="@+id/newReminderTime"
-            app:layout_constraintTop_toBottomOf="@+id/newReminderTime" />
+            <TextView
+                android:id="@+id/newReminderTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="64dp"
+                android:text="@string/timeframe"
+                android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/newReminderTitle"
+                app:layout_constraintTop_toBottomOf="@+id/newRemLocButton" />
 
-        <CheckBox
-            android:id="@+id/newRemTimeCheck"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/checkbox_blank"
-            app:layout_constraintBottom_toBottomOf="@+id/newRemTimeButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/newRemTimeButton"
-            app:layout_constraintTop_toTopOf="@+id/newRemTimeButton" />
+            <Button
+                android:id="@+id/newRemTimeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/set_time"
+                app:layout_constraintStart_toStartOf="@+id/newReminderTime"
+                app:layout_constraintTop_toBottomOf="@+id/newReminderTime" />
+
+            <CheckBox
+                android:id="@+id/newRemTimeCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:checked="false"
+                android:text="@string/checkbox_blank"
+                app:layout_constraintBottom_toBottomOf="@+id/newRemTimeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/newRemTimeButton"
+                app:layout_constraintTop_toTopOf="@+id/newRemTimeButton" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newRemScrollView">
 
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="match_parent"
             android:onClick="onButtonClick"
-            android:text="@string/button_save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newRemTimeButton"
-            app:layout_constraintVertical_bias="0.0" />
+            android:text="@string/button_save" />
+
+        <Button
+            android:id="@+id/emptyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_height="match_parent"
             android:onClick="onButtonClick"
-            android:text="@string/button_cancel"
-            app:layout_constraintBottom_toBottomOf="@+id/saveButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toEndOf="@+id/saveButton"
-            app:layout_constraintTop_toTopOf="@+id/saveButton"
-            app:layout_constraintVertical_bias="1.0" />
+            android:text="@string/button_cancel" />
 
-    </android.support.constraint.ConstraintLayout>
-</ScrollView>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
 
 
 
