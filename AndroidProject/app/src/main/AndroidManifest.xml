@@ -37,6 +37,7 @@
         <activity android:name=".RemindersScreen"></activity>
         <activity android:name=".PendingReminders"/>
         <activity android:name=".LocationSelection"/>
+        <activity android:name=".BuddySearch"/>
     </application>
 
 </manifest>
