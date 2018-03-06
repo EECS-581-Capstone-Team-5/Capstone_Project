@@ -2,17 +2,17 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/SearchPage"
+    android:id="@+id/buddysearch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySearch"
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/BuddySearch"
-        android:layout_width="384dp"
-        android:layout_height="458dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -28,7 +28,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/search_hint"
-            android:label="@string/search_label" />
+            android:label="@string/search_label"
+            android:visibility="visible" />
 
         <ScrollView
             android:id="@+id/Buddies_Searched"
@@ -53,7 +54,8 @@
                     android:id="@+id/AddBud"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/search_add" />
+                    android:text="@string/search_add"
+                    android:visibility="visible" />
 
             </LinearLayout>
         </ScrollView>

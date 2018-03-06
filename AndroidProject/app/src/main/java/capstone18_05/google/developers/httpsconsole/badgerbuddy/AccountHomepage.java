@@ -25,7 +25,9 @@ public class AccountHomepage extends AppCompatActivity {
     public void onMyBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
 
     public void onReminders(View view) { startActivity(new Intent(this, RemindersScreen.class)); }
-    
+
+    public void onMap(View view) { startActivity(new Intent(this, MapsActivity.class)); }
+
     public void onLogOut(View view) { finish(); }
 
 

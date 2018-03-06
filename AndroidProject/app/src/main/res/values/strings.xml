@@ -48,11 +48,13 @@
     <string name="buddy_search">Buddy Search</string>
     <string name="pending_button">My Reminders</string>
     <string name="my_buddies">My Buddies</string>
+    <string name="google_map">Google Map</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to MyBuddy page -->
     <string name="buddy_name">Buddy: Name of Buddy</string>
     <string name="button_delete">Delete</string>
     <string name="button_add">Add Buddy</string>
     <string name="button_reminder_page">Reminders Page</string>
     <string name="ui_test">UI Test</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
