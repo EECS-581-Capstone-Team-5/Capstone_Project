@@ -71,7 +71,6 @@
         tools:layout_editor_absoluteY="65dp" />
 
     <Button
-        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
