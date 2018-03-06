@@ -1,7 +1,14 @@
 package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.view.View;
+
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -9,6 +16,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -22,6 +32,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+
+    public void onMapSearch(View view){
+        EditText locationSearch = (EditText) findViewById(R.id.location_name);
+        String location = locationSearch.getText().toString();
+        List<Address> addressList = null;
+
+        if(location != null || !location.equals("")){
+            Geocoder geocoder = new Geocoder(this);
+            try{
+                addressList = geocoder.getFromLocationName(location, 1);
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+
+            Address address = addressList.get(0);
+            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        }
     }
 
 
@@ -43,4 +74,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(lawrence).title("Marker in Lawrence"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lawrence));
     }
+
 }
