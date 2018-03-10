@@ -1,13 +1,18 @@
 package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
+import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.widget.EditText;
 import android.view.View;
+import android.widget.Toast;
 
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -20,7 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMyLocationButtonClickListener {
 
     private GoogleMap mMap;
 
@@ -69,10 +74,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng lawrence = new LatLng(38.9717, -95.2353);
-        mMap.addMarker(new MarkerOptions().position(lawrence).title("Marker in Lawrence"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(lawrence));
+        // Add a marker in Lawrence and move the camera
+        //LatLng lawrence = new LatLng(38.9717, -95.2353);
+        //mMap.addMarker(new MarkerOptions().position(lawrence).title("Marker in Lawrence"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(lawrence));
+
+        mMap.setMyLocationEnabled(true);
+        mMap.setOnMyLocationButtonClickListener(this);
     }
+
+
+    public boolean onMyLocationButtonClick() {
+        Toast.makeText(this, "MyLocation button clicked", Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
 
 }
