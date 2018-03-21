@@ -10,14 +10,23 @@
 
     <ScrollView
         android:id="@+id/newRemScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="376dp">
+        android:layout_width="382dp"
+        android:layout_height="524dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/newRemCon1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="6dp">
 
             <TextView
                 android:id="@+id/newReminderTitle"
@@ -33,6 +42,7 @@
 
             <TextView
                 android:id="@+id/newReminderName"
+                android:labelFor="@+id/newRemNameField"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
@@ -72,10 +82,9 @@
 
             <EditText
                 android:id="@+id/newRemDescField"
-                android:layout_width="288dp"
-                android:layout_height="117dp"
+                android:layout_width="347dp"
+                android:layout_height="167dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="4dp"
                 android:ems="10"
                 android:hint="@string/edit_prompt"
                 android:inputType="textPersonName"
@@ -163,44 +172,47 @@
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:gravity="bottom"
-        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/newRemScrollView">
+        app:layout_constraintTop_toBottomOf="@+id/newRemScrollView">
 
 
         <Button
             android:id="@+id/saveButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:onClick="onButtonClick"
-            android:text="@string/button_save" />
-
-        <Button
-            android:id="@+id/emptyButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="invisible" />
+            android:layout_marginStart="8dp"
+            android:onClick="onButtonClick"
+            android:text="@string/button_save"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelButton"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/cancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:baselineAligned="false"
             android:onClick="onButtonClick"
-            android:text="@string/button_cancel" />
+            android:text="@string/button_cancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
-
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
 
 
