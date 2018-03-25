@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/my_buddies"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/my_buddies"
+            android:visible="true" />
+        <item
+            android:id="@+id/makeNewRem"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/make_new_rem"
+            android:visible="true" />
+        <item
+            android:id="@+id/buddySearchButton"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/buddy_search"
+            android:visible="true" />
+        <item
+            android:id="@+id/map_button"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/google_map"
+            android:visible="true" />
+        <item
+            android:id="@+id/reminders"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/pending_button"
+            android:visible="true" />
+        <item
+            android:id="@+id/pendingRemindersButton"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/pending_button"
+            android:visible="true" />
+        <item
+            android:id="@+id/logoutButton"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="@string/logout"
+            android:visible="true" />
+    </group>
+</menu>

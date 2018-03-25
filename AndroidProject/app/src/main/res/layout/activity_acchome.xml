@@ -6,96 +6,40 @@
     android:layout_height="match_parent"
     tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.AccountHomepage">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/home_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="4dp"
-        android:background="?attr/colorPrimaryDark"
-        android:elevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="241dp"
+        android:layout_height="643dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fitsSystemWindows="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
 
+        </FrameLayout>
 
-    <Button
-        android:id="@+id/my_buddies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="68dp"
-        android:onClick="onMyBuddies"
-        android:text="@string/my_buddies"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buddySearchButton" />
+        <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/menu_acchome" />
+    </android.support.v4.widget.DrawerLayout>
 
-    <Button
-        android:id="@+id/makeNewRem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="64dp"
-        android:onClick="onMakeNewRem"
-        android:text="@string/make_new_rem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buddySearchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="68dp"
-        android:onClick="onBuddySearch"
-        android:text="@string/buddy_search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/makeNewRem" />
-
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="60dp"
-        android:onClick="onLogOut"
-        android:text="@string/logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pendingRemindersButton" />
-
-    <Button
-        android:id="@+id/pendingRemindersButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="68dp"
-        android:onClick="onPending"
-        android:text="@string/pending_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_buddies" />
-
-    <Button
-        android:id="@+id/reminders"
-        android:layout_width="150dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="64dp"
-        android:onClick="onReminders"
-        android:text="Reminders Page"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="65dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="236dp"
-        android:onClick="onMap"
-        android:text="@string/google_map"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminders" />
 </android.support.constraint.ConstraintLayout>

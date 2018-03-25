@@ -46,7 +46,8 @@
     <string name="make_new_rem">New Reminder</string>
     <string name="logout">Log Out</string>
     <string name="buddy_search">Buddy Search</string>
-    <string name="pending_button">My Reminders</string>
+    <string name="pending_button">Pending Reminders</string>
+    <string name="reminders_button">All Reminders</string>
     <string name="my_buddies">My Buddies</string>
     <string name="google_map">Google Map</string>
 
