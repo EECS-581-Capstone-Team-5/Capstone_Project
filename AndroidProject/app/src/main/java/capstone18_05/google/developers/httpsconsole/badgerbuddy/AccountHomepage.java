@@ -35,11 +35,11 @@ public class AccountHomepage extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
                             case R.id.my_buddies:
-                                startActivity(new Intent(getApplicationContext(), BuddySearch.class));
+                                startActivity(new Intent(getApplicationContext(), Buddies_Screen.class));
                             case R.id.makeNewRem:
                                 startActivity(new Intent(getApplicationContext(), CreateReminders.class));
                             case R.id.buddySearchButton:
-                                startActivity(new Intent(getApplicationContext(), Buddies_Screen.class));
+                                startActivity(new Intent(getApplicationContext(), BuddySearch.class));
                             case R.id.map_button:
                                 startActivity(new Intent(getApplicationContext(), MapsActivity.class));
                             case R.id.reminders:

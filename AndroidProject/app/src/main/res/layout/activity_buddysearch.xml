@@ -65,7 +65,7 @@
     <LinearLayout
         android:id="@+id/NavButton"
         android:layout_width="384dp"
-        android:layout_height="36dp"
+        android:layout_height="64dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -75,8 +75,9 @@
         <Button
             android:id="@+id/CancelButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:onClick="onCancel"
             android:text="@string/search_cancel" />
 
     </LinearLayout>

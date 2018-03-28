@@ -14,11 +14,11 @@ class RemindersScreen : AppCompatActivity() {
 
     fun onAdd(view: View)
     {
-        startActivity(Intent(this, CreateReminders::class.java))
+        startActivity(Intent(applicationContext, CreateReminders::class.java))
     }
 
-    fun onBuddy(view: View)
+    fun onHome(view: View)
     {
-        startActivity(Intent(this, Buddies_Screen::class.java))
+        finish()
     }
 }

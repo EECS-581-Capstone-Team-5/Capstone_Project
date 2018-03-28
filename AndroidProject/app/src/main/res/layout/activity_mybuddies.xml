@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
-
+        <!--
         <Button
             android:id="@+id/button_add"
             android:layout_width="wrap_content"
@@ -39,6 +39,16 @@
             android:onClick="onReminder"
             android:padding="@dimen/fab_margin"
             android:text="@string/button_reminder_page" />
+        -->
+
+        <Button
+            android:id="@+id/button_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onHome"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/back_to_homepage" />
 
     </LinearLayout>
 
@@ -68,37 +78,32 @@
                 android:padding="@dimen/fab_margin">
 
                 <TextView
-                    android:id="@+id/buddy_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/buddy_name"
-                    android:textAppearance="@android:style/TextAppearance.Material.Title" />
-
-                <Button
-                    android:id="@+id/button_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_delete" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/fab_margin">
-
-                <TextView
                     android:id="@+id/buddy_name1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/buddy_name"
                     android:textAppearance="@android:style/TextAppearance.Material.Title" />
 
-                <Button
-                    android:id="@+id/button_delete1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_delete" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <Button
+                        android:id="@+id/buddy_rem_00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reminders_from_buddy" />
+
+                    <Button
+                        android:id="@+id/buddy_delete_00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/buddy_delete" />
+
+
+                </LinearLayout>
 
             </LinearLayout>
         </LinearLayout>

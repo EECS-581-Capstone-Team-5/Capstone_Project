@@ -26,18 +26,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onAdd"
-            android:text="Add Reminder"
-            android:textAppearance="@android:style/TextAppearance.Material.Widget.Button.Colored"
+            android:text="@string/new_reminder_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/buddy_button"
+            android:id="@+id/allrem_back_to_homepage"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onBuddy"
-            android:text="Buddies"
+            android:onClick="onHome"
+            android:text="@string/back_to_homepage"
             android:visibility="visible" />
 
     </LinearLayout>
@@ -60,192 +60,59 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/reminder_example2"
+                android:id="@+id/myrem_000"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/reminder_name2"
+                    android:id="@+id/myrem_000_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reminder Name"
+                    android:text="@string/rem_title"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/reminder_description2"
+                    android:id="@+id/myrem_000_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reminder Description"
+                    android:text="@string/rem_desc"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/reminder_location2"
+                    android:id="@+id/myrem_000_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Reminder Location"
+                    android:text="@string/rem_time"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/myrem_000_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rem_location"
                     android:textSize="18sp" />
 
                 <LinearLayout
-                    android:id="@+id/remove_button_view2"
+                    android:id="@+id/myrem_000_remove_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/remove_button2"
+                        android:id="@+id/myrem_000_remove_button"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Remove" />
+                        android:text="@string/rem_delete" />
 
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/reminder_example3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/reminder_name3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Name"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/reminder_description3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Description"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/reminder_location3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Location"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/remove_button_view3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/remove_button3"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Remove" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/reminder_example"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/reminder_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Name"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/reminder_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Description"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/reminder_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Location"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/remove_button_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/remove_button"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Remove" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/reminder_example1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/reminder_name1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Name"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/reminder_description1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Description"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/reminder_location1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Reminder Location"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/remove_button_view1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/remove_button1"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Remove" />
-
-                </LinearLayout>
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -9,16 +9,26 @@ class Buddies_Screen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_buddies__screen)
+        setContentView(R.layout.activity_mybuddies)
     }
 
     fun onReminder(view: View)
     {
-        startActivity(Intent(this, RemindersScreen::class.java))
+        startActivity(Intent(applicationContext, RemindersScreen::class.java))
     }
 
     fun onSearch(view: View)
     {
-        startActivity(Intent(this, BuddySearch::class.java))
+        startActivity(Intent(applicationContext, BuddySearch::class.java))
+    }
+
+    fun onRemForYou(view: View)
+    {
+        // open screen of reminders for the current user that were created by the selected buddy
+    }
+
+    fun onHome(view: View)
+    {
+        this.finish()
     }
 }

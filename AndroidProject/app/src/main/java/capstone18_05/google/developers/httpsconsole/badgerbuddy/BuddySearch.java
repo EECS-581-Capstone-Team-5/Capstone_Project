@@ -20,4 +20,8 @@ public class BuddySearch extends AppCompatActivity {
         setContentView(R.layout.activity_buddysearch);
         Intent intent = getIntent();
     }
+
+    public void onCancel(View view) {
+        finish();
+    }
 }

@@ -30,6 +30,7 @@
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
     <string name="close_menu">Close Menu</string>
+    <string name="back_to_homepage">Back to Homepage</string>
     <string name="timeframe">Time</string>
     <string name="location">Location</string>
     <string name="description">Description</string>
@@ -52,9 +53,19 @@
 
     <!-- Strings related to MyBuddy page -->
     <string name="buddy_name">Buddy: Name of Buddy</string>
-    <string name="button_delete">Delete</string>
+    <string name="buddy_delete">Delete Buddy</string>
     <string name="button_add">Add Buddy</string>
     <string name="button_reminder_page">Reminders Page</string>
+    <string name="reminders_from_buddy">Reminders for You</string>
     <string name="ui_test">UI Test</string>
     <string name="title_activity_maps">Map</string>
+
+    <!-- Strings related to Reminders Screen -->
+    <string name="rem_title">Title: </string>
+    <string name="rem_desc">Description: </string>
+    <string name="rem_time">Time: </string>
+    <string name="rem_date">Date: </string>
+    <string name="rem_location">Location: </string>
+    <string name="rem_delete">Delete This Reminder</string>
+
 </resources>

@@ -14,26 +14,24 @@ public class PendingReminders extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pending_reminders);
+        setContentView(R.layout.activity_pendingrem);
 
         Button reminders_button = findViewById(R.id.reminder_button);
-        Button buddy_button = findViewById(R.id.buddy_button);
+        Button back_to_home = findViewById(R.id.pending_back_to_home);
 
         reminders_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(PendingReminders.this, RemindersScreen.class);
-                PendingReminders.this.startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), RemindersScreen.class);
+                startActivity(intent);
             }
         });
 
-        buddy_button.setOnClickListener(new View.OnClickListener(){
+        back_to_home.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(PendingReminders.this, Buddies_Screen.class);
-                PendingReminders.this.startActivity(intent);
+            public void onClick(View v) {
+                finish();
             }
         });
     }
