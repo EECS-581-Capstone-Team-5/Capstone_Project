@@ -4,43 +4,43 @@
         <item
             android:id="@+id/my_buddies"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_my_buddies"
             android:title="@string/my_buddies"
             android:visible="true" />
         <item
             android:id="@+id/makeNewRem"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_newrem"
             android:title="@string/make_new_rem"
             android:visible="true" />
         <item
             android:id="@+id/buddySearchButton"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_buddysearch"
             android:title="@string/buddy_search"
             android:visible="true" />
         <item
             android:id="@+id/map_button"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_mapplace"
             android:title="@string/google_map"
             android:visible="true" />
         <item
             android:id="@+id/reminders"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
-            android:title="@string/pending_button"
+            android:icon="@drawable/ic_allreminders"
+            android:title="@string/reminders_button"
             android:visible="true" />
         <item
             android:id="@+id/pendingRemindersButton"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_pendingreminders"
             android:title="@string/pending_button"
             android:visible="true" />
         <item
             android:id="@+id/logoutButton"
             android:enabled="true"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_logout"
             android:title="@string/logout"
             android:visible="true" />
     </group>

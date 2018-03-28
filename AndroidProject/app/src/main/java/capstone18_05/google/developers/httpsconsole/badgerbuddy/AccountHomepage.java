@@ -28,33 +28,29 @@ public class AccountHomepage extends AppCompatActivity {
         navView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+                    {
                         menuItem.setCheckable(true); // highlight the item that has been pressed
                         accHomeDrawer.closeDrawers(); // close the nav drawer when the item is pressed
 
                         switch (menuItem.getItemId()) {
                             case R.id.my_buddies:
                                 startActivity(new Intent(getApplicationContext(), BuddySearch.class));
-                                return true;
                             case R.id.makeNewRem:
                                 startActivity(new Intent(getApplicationContext(), CreateReminders.class));
-                                return true;
                             case R.id.buddySearchButton:
                                 startActivity(new Intent(getApplicationContext(), Buddies_Screen.class));
-                                return true;
                             case R.id.map_button:
                                 startActivity(new Intent(getApplicationContext(), MapsActivity.class));
-                                return true;
                             case R.id.reminders:
                                 startActivity(new Intent(getApplicationContext(), RemindersScreen.class));
-                                return true;
                             case R.id.pendingRemindersButton:
                                 startActivity(new Intent(getApplicationContext(), PendingReminders.class));
-                                return true;
                             case R.id.logoutButton:
                                 finish();
-                                return true;
                         }
+
+                        menuItem.setCheckable(false);
                         return true;
                     }
                 }
@@ -76,11 +72,14 @@ public class AccountHomepage extends AppCompatActivity {
                     @Override
                     public void onDrawerClosed(@NonNull View drawerView) {
                         // respond when the drawer is closed
+                        accHomeDrawer.closeDrawers(); // close the nav drawer when the item is pressed
+
                     }
 
                     @Override
                     public void onDrawerStateChanged(int newState) {
                         // respond when the drawer motion state changes
+                        accHomeDrawer.closeDrawers(); // close the nav drawer when the item is pressed
                     }
                 }
         );
