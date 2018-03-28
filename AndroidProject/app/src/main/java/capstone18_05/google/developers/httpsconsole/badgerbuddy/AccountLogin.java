@@ -33,6 +33,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -180,6 +181,10 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
 
                     if(success)
                     {
+                        Current_User.user_id = j_Object.getInt("user_id");
+                        Current_User.first_name = j_Object.getString("first_name");
+                        Current_User.last_name = j_Object.getString("last_name");
+                        Current_User.username = j_Object.getString("username");
                         Intent intent = new Intent(AccountLogin.this, AccountHomepage.class);
                         showProgress(false);
                         AccountLogin.this.startActivity(intent);

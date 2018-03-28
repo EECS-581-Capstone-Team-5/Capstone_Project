@@ -22,7 +22,7 @@ public class AccountHomepage extends AppCompatActivity {
 
     public void onPending(View view) { startActivity(new Intent(this, PendingReminders.class)); }
 
-    public void onMyBuddies(View view) { startActivity(new Intent(this, Buddies_Screen.class)); }
+    public void onMyBuddies(View view) { startActivity(new Intent(this, BuddyScreen.class)); }
 
     public void onReminders(View view) { startActivity(new Intent(this, RemindersScreen.class)); }
 
