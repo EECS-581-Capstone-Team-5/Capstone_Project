@@ -2,7 +2,6 @@ package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -17,7 +17,6 @@ public class AccountHomepage extends AppCompatActivity {
     private DrawerLayout accHomeDrawer;
     private Toolbar accHomeToolbar;
     private NavigationView navView;
-    final String current_user = getIntent().getStringExtra("username");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +38,7 @@ public class AccountHomepage extends AppCompatActivity {
                                 startActivity(new Intent(getApplicationContext(), Buddies_Screen.class));
                                 break;
                             case R.id.makeNewRem:
-                                Intent i = new Intent(getApplicationContext(), CreateReminders.class);
-                                i.putExtra("username", current_user);
-                                startActivity(i);
+                                startActivity(new Intent(getApplicationContext(), CreateReminders.class));
                                 break;
                             case R.id.buddySearchButton:
                                 startActivity(new Intent(getApplicationContext(), BuddySearch.class));

@@ -181,17 +181,14 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
 
                     if(success)
                     {
-                        //Current_User.user_id = j_Object.getInt("user_id");
-                        //Current_User.first_name = j_Object.getString("first_name");
-                        //Current_User.last_name = j_Object.getString("last_name");
-                        //Current_User.username = j_Object.getString("username");
+                        Current_User.user_id = j_Object.getInt("user_id");
+                        Current_User.first_name = j_Object.getString("first_name");
+                        Current_User.last_name = j_Object.getString("last_name");
+                        Current_User.username = j_Object.getString("username");
 
-                        Intent intent = new Intent(AccountLogin.this, AccountHomepage.class);
                         showProgress(false);
-                        intent.putExtra("username", uName);
-
-                        AccountLogin.this.startActivity(intent);
-                        AccountLogin.this.finish();
+                        startActivity(new Intent(getApplicationContext(), AccountHomepage.class));
+                        finish();
                     }
                     else
                     {
