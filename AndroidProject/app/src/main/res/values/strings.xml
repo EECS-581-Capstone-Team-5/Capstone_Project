@@ -61,6 +61,8 @@
     <string name="title_activity_maps">Map</string>
 
     <!-- Strings related to Reminders Screen -->
+    <string name="cancel_prompt">Are you sure you want to cancel?</string>
+    <string name="no">No</string>
     <string name="rem_title">Title: </string>
     <string name="rem_desc">Description: </string>
     <string name="rem_time">Time: </string>
@@ -68,4 +70,5 @@
     <string name="rem_location">Location: </string>
     <string name="rem_delete">Delete This Reminder</string>
     <string name="title_activity_buddy_screen">BuddyScreen</string>
+    <string name="yes">Yes</string>
 </resources>

@@ -11,7 +11,7 @@
     <ScrollView
         android:id="@+id/newRemScrollView"
         android:layout_width="382dp"
-        android:layout_height="524dp"
+        android:layout_height="496dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -42,10 +42,10 @@
 
             <TextView
                 android:id="@+id/newReminderName"
-                android:labelFor="@+id/newRemNameField"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
+                android:labelFor="@+id/newRemNameField"
                 android:text="@string/new_reminder_name"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textSize="18sp"
@@ -176,7 +176,7 @@
         android:id="@+id/linearLayout"
         style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="102dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -191,25 +191,30 @@
         <Button
             android:id="@+id/saveButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="124dp"
+            android:layout_height="71dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/button_save"
-            app:layout_constraintBaseline_toBaselineOf="@+id/cancelButton"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
 
         <Button
             android:id="@+id/cancelButton"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_width="124dp"
+            android:layout_height="71dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             android:baselineAligned="false"
-            android:onClick="onCancel"
             android:text="@string/button_cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/saveButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/saveButton"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,5 +1,7 @@
 package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
+import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ public class CreateReminders extends AppCompatActivity {
 
     private EditText mRemName, mRemDesc;
     private RequestQueue r_queue;
+    private Button save_button, cancel_button;
     //private StringRequest stringRequest;
 
     // the database columns for self reminders and buddy reminders
@@ -31,8 +34,8 @@ public class CreateReminders extends AppCompatActivity {
 
         mRemName = findViewById(R.id.newRemNameField);
         mRemDesc = findViewById(R.id.newRemDescField);
-        Button save_button = findViewById(R.id.saveButton);
-        //Button cancel_button = findViewById(R.id.cancel_button);
+        save_button = findViewById(R.id.saveButton);
+        cancel_button = findViewById(R.id.cancelButton);
 
         // TODO: add buddy reminder functionality
         save_button.setOnClickListener(new View.OnClickListener() {
@@ -81,12 +84,27 @@ public class CreateReminders extends AppCompatActivity {
         });
 
 
-        //cancel_button.setOnClickListener();
+        cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder cancel_dialog = new AlertDialog.Builder(CreateReminders.this);
+                cancel_dialog.setMessage(R.string.cancel_prompt);
+                cancel_dialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                    CreateReminders.this.finish();
+                                 }
+                             });
+                cancel_dialog.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                                 @Override
+                                 public void onClick(DialogInterface dialog, int which) {
+                                     // the user cancelled the dialog
+                                 }
+                             });
+                cancel_dialog.create().show();
+            }
+        });
 
     }
 
-
-    public void onCancel(View view) {
-        finish();
-    }
 }
