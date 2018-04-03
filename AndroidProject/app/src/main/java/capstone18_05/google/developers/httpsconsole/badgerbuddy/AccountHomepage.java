@@ -68,6 +68,7 @@ public class AccountHomepage extends AppCompatActivity {
                     public void onDrawerOpened(@NonNull View drawerView) {
                         // respond when the drawer is opened
                     }
+                    //public void onMyBuddies(View view) { startActivity(new Intent(this, BuddyScreen.class)); }
 
                     @Override
                     public void onDrawerClosed(@NonNull View drawerView) {
