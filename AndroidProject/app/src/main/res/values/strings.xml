@@ -59,7 +59,6 @@
     <string name="reminders_from_buddy">Reminders for You</string>
     <string name="ui_test">UI Test</string>
     <string name="title_activity_maps">Map</string>
-<<<<<<< HEAD
 
     <!-- Strings related to Reminders Screen -->
     <string name="rem_title">Title: </string>
@@ -68,8 +67,5 @@
     <string name="rem_date">Date: </string>
     <string name="rem_location">Location: </string>
     <string name="rem_delete">Delete This Reminder</string>
-
-=======
     <string name="title_activity_buddy_screen">BuddyScreen</string>
->>>>>>> 8684aaf7487d9cebccc04670389eb9ae40c6c9f4
 </resources>

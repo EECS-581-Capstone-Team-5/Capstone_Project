@@ -62,9 +62,9 @@ public class CreateAccount extends AppCompatActivity {
                             if(response.equals("true"))
                             {
                                 Intent intent = new Intent(CreateAccount.this, AccountLogin.class);
-                                CreateAccount.this.startActivity(intent);
+                                getApplicationContext().startActivity(intent);
                                 showProgress(false);
-                                CreateAccount.this.finish();
+                                finish();
                             }
                             else
                             {

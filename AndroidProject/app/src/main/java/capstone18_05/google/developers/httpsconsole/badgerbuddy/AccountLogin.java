@@ -109,7 +109,7 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
      */
     private void attemptLogin() {
         //if (mAuthTask != null) {
-            //return;
+        //return;
         //}
 
         // Reset errors.
@@ -166,7 +166,7 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
         return true;
     }
 
-    private void authorizationCheck(String uName, String pWord)
+    private void authorizationCheck(final String uName, String pWord)
     {
         Response.Listener<String> r_Listener = new Response.Listener<String>() {
             @Override
@@ -181,12 +181,15 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
 
                     if(success)
                     {
-                        Current_User.user_id = j_Object.getInt("user_id");
-                        Current_User.first_name = j_Object.getString("first_name");
-                        Current_User.last_name = j_Object.getString("last_name");
-                        Current_User.username = j_Object.getString("username");
+                        //Current_User.user_id = j_Object.getInt("user_id");
+                        //Current_User.first_name = j_Object.getString("first_name");
+                        //Current_User.last_name = j_Object.getString("last_name");
+                        //Current_User.username = j_Object.getString("username");
+
                         Intent intent = new Intent(AccountLogin.this, AccountHomepage.class);
                         showProgress(false);
+                        intent.putExtra("username", uName);
+
                         AccountLogin.this.startActivity(intent);
                         AccountLogin.this.finish();
                     }
@@ -362,4 +365,3 @@ public class AccountLogin extends AppCompatActivity implements LoaderCallbacks<C
         }
     }
 }
-
