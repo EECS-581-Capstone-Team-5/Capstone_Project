@@ -67,7 +67,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/myrem_000_name"
+                    android:id="@+id/myrem_temp_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/rem_title"
@@ -76,34 +76,34 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/myrem_000_desc"
+                    android:id="@+id/myrem_temp_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/rem_desc"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/myrem_000_time"
+                    android:id="@+id/myrem_temp_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/rem_time"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/myrem_000_location"
+                    android:id="@+id/myrem_temp_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/rem_location"
                     android:textSize="18sp" />
 
                 <LinearLayout
-                    android:id="@+id/myrem_000_remove_layout"
+                    android:id="@+id/myrem_temp_remove_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/myrem_000_remove_button"
+                        android:id="@+id/myrem_temp_remove_button"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
