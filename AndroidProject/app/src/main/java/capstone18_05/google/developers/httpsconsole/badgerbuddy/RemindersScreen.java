@@ -19,9 +19,28 @@ public class RemindersScreen extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_reminders_screen);
+
+
+            create_rem.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(getApplicationContext(), CreateReminders.class));
+                }
+            });
+
+            back_to_home.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+
+            getReminders();
+
+
         }
 
-        public void onAdd(View view)
+        public void getReminders()
         {
             startActivity(new Intent(getApplicationContext(), CreateReminders.class));
         }

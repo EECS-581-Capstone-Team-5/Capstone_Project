@@ -39,8 +39,7 @@
             android:parentActivityName=".StartPage" />
         <activity android:name=".AccountHomepage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".CreateReminders"
-            android:parentActivityName=".AccountHomepage" />
+        <activity android:name=".CreateReminders" />
         <activity android:name=".Buddies_Screen"
             android:parentActivityName=".AccountHomepage" />
         <activity android:name=".RemindersScreen"
