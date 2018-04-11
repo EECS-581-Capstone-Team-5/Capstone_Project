@@ -12,22 +12,20 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetReminderRequest extends JsonRequest {
+public class GetReminderRequest extends StringRequest {
 
     public static final String DATABASE_URL = "https://people.eecs.ku.edu/~j286m692/Project_Testcode/get_reminders.php";
     private Map<String, String> params;
 
-    public GetReminderRequest(String url, String requestBody, Response.Listener listener, Response.ErrorListener errorListener) {
-        super(DATABASE_URL, requestBody, listener, errorListener);
+    public GetReminderRequest(String self_or_buddy, Response.Listener<String> listener) {
+        super(Method.POST, DATABASE_URL, listener, null);
+
+        params = new HashMap<>();
+        params.put("self_or_buddy", self_or_buddy);
+        params.put("by_user", Current_User.username);
+        params.put("for_user", Current_User.username);
     }
 
     @Override
-    protected Response parseNetworkResponse(NetworkResponse response) {
-        return null;
-    }
-
-    @Override
-    public int compareTo(@NonNull Object o) {
-        return 0;
-    }
+    public Map<String, String> getParams() { return params; }
 }

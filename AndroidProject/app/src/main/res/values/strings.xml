@@ -71,4 +71,6 @@
     <string name="rem_delete">Delete This Reminder</string>
     <string name="title_activity_buddy_screen">BuddyScreen</string>
     <string name="yes">Yes</string>
+    <string name="backButtonString">&lt;</string>
+    <string name="forwardButtonString">&gt;</string>
 </resources>
