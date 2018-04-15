@@ -9,7 +9,7 @@
     <ScrollView
         android:id="@+id/remindersview"
         android:layout_width="368dp"
-        android:layout_height="397dp"
+        android:layout_height="295dp"
         android:layout_marginBottom="67dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,120 +17,138 @@
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494">
+        app:layout_constraintVertical_bias="0.179">
+
+
 
         <LinearLayout
-            android:id="@+id/reminders_layout"
+            android:id="@+id/myrem_01"
+            android:background="?android:selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/myrem_000"
+            <TextView
+                android:id="@+id/myrem_01_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:orientation="vertical">
+                android:layout_height="50dp"
+                android:text="@string/rem_title"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/myrem_temp_name"
-                    android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/myrem_01_time"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:text="@string/rem_time"
+                android:textSize="18sp" />
+
+
+            <LinearLayout
+                android:id="@+id/myrem_01_button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/myrem_01_expand_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rem_title"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:layout_marginRight="60dp"
+                    android:text="@string/rem_expand" />
 
-                <TextView
-                    android:id="@+id/myrem_temp_desc"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/myrem_01_delete_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/rem_desc"
-                    android:textSize="18sp" />
+                    android:layout_marginLeft="60dp"
+                    android:backgroundTint="@android:color/holo_red_light"
+                    android:text="@string/rem_delete"
+                    android:textAlignment="center" />
 
-                <TextView
-                    android:id="@+id/myrem_temp_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rem_time"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/myrem_temp_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rem_location"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:id="@+id/myrem_temp_remove_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/myrem_temp_remove_button"
-                        style="@style/Widget.AppCompat.Button.Colored"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/rem_delete" />
-
-                </LinearLayout>
             </LinearLayout>
 
-
         </LinearLayout>
+
     </ScrollView>
 
 
-    <Button
-        android:id="@+id/allRem_ForwardButton"
+    <LinearLayout
+        android:id="@+id/allRem_viewLayout"
+        style="@style/Base.Widget.AppCompat.ButtonBar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="84dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text=">"
-        app:layout_constraintBottom_toBottomOf="@+id/allRem_BackButton"
+        android:layout_marginTop="68dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/allRem_nav_buttons"
         app:layout_constraintEnd_toEndOf="@+id/remindersview"
-        app:layout_constraintHorizontal_bias="0.297"
-        app:layout_constraintStart_toEndOf="@+id/allRem_BackButton"
-        app:layout_constraintTop_toTopOf="@+id/allRem_BackButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/remindersview"
+        app:layout_constraintTop_toBottomOf="@+id/remindersview">
 
-    <Button
-        android:id="@+id/allRem_BackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:layout_marginStart="80dp"
-        android:text="@string/backButtonString"
-        app:layout_constraintBottom_toBottomOf="@+id/remindersview"
-        app:layout_constraintStart_toStartOf="@+id/remindersview" />
+        <Button
+            android:id="@+id/allRem_BackButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|center|start"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/backButtonString"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/remindersview"
+            app:layout_constraintStart_toStartOf="@+id/remindersview" />
+
+        <Button
+            android:id="@+id/allRem_ForwardButton"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|center|end"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/forwardButtonString"
+            app:layout_constraintBottom_toBottomOf="@+id/allRem_BackButton"
+            app:layout_constraintEnd_toEndOf="@+id/remindersview"
+            app:layout_constraintHorizontal_bias="0.297"
+            app:layout_constraintStart_toEndOf="@+id/allRem_BackButton"
+            app:layout_constraintTop_toTopOf="@+id/allRem_BackButton"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/allRem_nav_buttons"
         android:layout_width="match_parent"
-        android:layout_height="511dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:layout_marginStart="8dp"
         android:gravity="bottom"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/allRem_add_reminders"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="87dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|fill_horizontal|center|start"
             android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:onClick="onAdd"
             android:text="@string/new_reminder_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:visibility="visible" />
 
         <Button
@@ -138,7 +156,9 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal|center|end"
             android:layout_weight="1"
+            android:backgroundTint="?android:attr/colorAccent"
             android:onClick="onHome"
             android:text="@string/back_to_homepage"
             android:visibility="visible" />

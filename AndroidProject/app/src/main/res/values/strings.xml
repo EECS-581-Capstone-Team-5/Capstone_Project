@@ -64,11 +64,11 @@
     <string name="cancel_prompt">Are you sure you want to cancel?</string>
     <string name="no">No</string>
     <string name="rem_title">Title: </string>
-    <string name="rem_desc">Description: </string>
+    <string name="rem_expand">Expand </string>
     <string name="rem_time">Time: </string>
     <string name="rem_date">Date: </string>
-    <string name="rem_location">Location: </string>
-    <string name="rem_delete">Delete This Reminder</string>
+    <string name="rem_location">See Location</string>
+    <string name="rem_delete">Delete</string>
     <string name="title_activity_buddy_screen">BuddyScreen</string>
     <string name="yes">Yes</string>
     <string name="backButtonString">&lt;</string>
