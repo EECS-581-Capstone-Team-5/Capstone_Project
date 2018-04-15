@@ -31,9 +31,9 @@ public class RemindersScreen extends AppCompatActivity {
     private Button create_rem, back_to_home, forward_button, back_button;
     private RequestQueue r_queue;
 
-    private int number_of_reminders_on_screen = 1;
+    private int number_of_reminders_on_screen = 3;
     private int current_start_index = 0;
-    private int current_end_index = number_of_reminders_on_screen;
+    private int current_end_index = number_of_reminders_on_screen-1;
     private int rem_result_size = 0;
     private LinearLayout[] myrem;
 
@@ -43,7 +43,7 @@ public class RemindersScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminders_screen);
 
-        myrem = new LinearLayout[] {findViewById(R.id.myrem_01)};
+        myrem = new LinearLayout[] {findViewById(R.id.myrem_01), findViewById(R.id.myrem_02), findViewById(R.id.myrem_03)};
         for(int i = 0; i < myrem.length; i++)
         {
             myrem[i].setVisibility(View.INVISIBLE);
@@ -136,7 +136,7 @@ public class RemindersScreen extends AppCompatActivity {
             back_button.setBackgroundColor(Color.LTGRAY);
         }
 
-        if(current_start_index >= remArray.length()-1) {
+        if((current_start_index + number_of_reminders_on_screen) >= remArray.length()-1) {
             forward_button.setClickable(false);
             forward_button.setBackgroundColor(Color.DKGRAY);
         }
@@ -290,6 +290,11 @@ public class RemindersScreen extends AppCompatActivity {
 
                 myrem[i].setClickable(true);
                 myrem[i].setVisibility(View.VISIBLE);
+
+                if(j >= remArray.length())
+                {
+                    break;
+                }
             }
 
         }
