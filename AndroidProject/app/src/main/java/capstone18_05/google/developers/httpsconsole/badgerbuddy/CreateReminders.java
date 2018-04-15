@@ -59,7 +59,7 @@ public class CreateReminders extends AppCompatActivity {
                                 String successMessage = "Successfully Saved Reminder";
                                 AlertDialog.Builder b = new AlertDialog.Builder(CreateReminders.this);
                                 b.setMessage(successMessage).setNeutralButton("", null);
-                                finish();
+                                CreateReminders.this.finish();
                             }
                             else {
                                 String errorMessage = "The Reminder Could Not Be Saved.";
@@ -84,23 +84,25 @@ public class CreateReminders extends AppCompatActivity {
         });
 
 
-        cancel_button.setOnClickListener(new View.OnClickListener() {
+        cancel_button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder cancel_dialog = new AlertDialog.Builder(CreateReminders.this);
                 cancel_dialog.setMessage(R.string.cancel_prompt);
                 cancel_dialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                                 @Override
-                                 public void onClick(DialogInterface dialog, int which) {
-                                    CreateReminders.this.finish();
-                                 }
-                             });
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         RemindersScreen.NEW_REMINDER_SAVED = 1;
+                         CreateReminders.this.finish();
+                     }
+                });
                 cancel_dialog.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
-                                 @Override
-                                 public void onClick(DialogInterface dialog, int which) {
-                                     // the user cancelled the dialog
-                                 }
-                             });
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                         // the user cancelled the dialog
+                         RemindersScreen.NEW_REMINDER_SAVED = 0;
+                     }
+                });
                 cancel_dialog.create().show();
             }
         });

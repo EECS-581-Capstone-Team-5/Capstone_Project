@@ -25,8 +25,8 @@
     <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
 
-    <string name="new_reminder_title">Create New Reminder</string>
-    <string name="new_reminder_name">Name:</string>
+    <string name="self_reminder_header">Create Your Reminder</string>
+    <string name="new_reminder_title">Title:</string>
     <string name="button_save">Save</string>
     <string name="button_cancel">Cancel</string>
     <string name="close_menu">Close Menu</string>
@@ -69,6 +69,7 @@
     <string name="rem_date">Date: </string>
     <string name="rem_location">See Location</string>
     <string name="rem_delete">Delete</string>
+    <string name="rem_make">Add Reminder</string>
     <string name="title_activity_buddy_screen">BuddyScreen</string>
     <string name="yes">Yes</string>
     <string name="backButtonString">&lt;</string>

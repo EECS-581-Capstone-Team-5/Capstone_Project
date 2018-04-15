@@ -2,6 +2,8 @@ package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,10 +23,12 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 public class RemindersScreen extends AppCompatActivity {
-    public static JSONArray remArray = null;
+    public JSONArray remArray = null;
+
+    // used to detect whether new reminders were created after the instantiation of this screen
+    public static int NEW_REMINDER_SAVED;
 
     private Button create_rem, back_to_home, forward_button, back_button;
-    boolean getRemResult = false;
     private RequestQueue r_queue;
 
     private int number_of_reminders_on_screen = 1;
@@ -53,37 +57,20 @@ public class RemindersScreen extends AppCompatActivity {
         back_button = findViewById(R.id.allRem_BackButton);
         back_button.setClickable(false);
 
-        getCurrentUsersReminders();
-        if(remArray != null) {
-            clickabilityUpdate();
-            updateRemindersDisplay();
-        }
-        else {
-            AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
-            b.setMessage("You have no reminders.\n" + remArray).setNeutralButton("OK",  new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    RemindersScreen.this.finish();
-                }
-            }).create().show();
-        }
-
+        getCurrentUserReminders();
 
 
         create_rem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = getIntent();
-                finish();
                 startActivity(new Intent(getApplicationContext(), CreateReminders.class));
-                startActivity(i);
             }
         });
 
         back_to_home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                RemindersScreen.this.finish();
             }
         });
 
@@ -92,9 +79,18 @@ public class RemindersScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(back_button.isClickable()) {
-                    current_start_index -= number_of_reminders_on_screen;
-                    current_end_index -= number_of_reminders_on_screen;
+                    if((current_start_index - number_of_reminders_on_screen) <= 0)
+                    {
+                        current_start_index = 0;
+                        current_end_index = number_of_reminders_on_screen;
+                    }
+                    else {
+                        current_start_index -= number_of_reminders_on_screen;
+                        current_end_index -= number_of_reminders_on_screen;
+                    }
                     clickabilityUpdate();
+                    updateRemindersDisplay();
+
                 }
             }
         });
@@ -103,9 +99,17 @@ public class RemindersScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(forward_button.isClickable()) {
-                    current_start_index += number_of_reminders_on_screen;
-                    current_end_index += number_of_reminders_on_screen;
+                    if((current_end_index + number_of_reminders_on_screen) >= remArray.length())
+                    {
+                        current_end_index = remArray.length() - 1;
+                        current_start_index = current_end_index - number_of_reminders_on_screen + 1;
+                    }
+                    else {
+                        current_start_index += number_of_reminders_on_screen;
+                        current_end_index += number_of_reminders_on_screen;
+                    }
                     clickabilityUpdate();
+                    updateRemindersDisplay();
                 }
             }
         });
@@ -113,17 +117,38 @@ public class RemindersScreen extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        getCurrentUserReminders();
+    }
+
+
 
     public void clickabilityUpdate() {
-        if(current_end_index <= 0) {
+        if(current_start_index <= 0) {
             back_button.setClickable(false);
+            back_button.setBackgroundColor(Color.DKGRAY);
         }
-        if(current_end_index >= remArray.length()) {
+        else {
+            back_button.setClickable(true);
+            back_button.setBackgroundColor(Color.LTGRAY);
+        }
+
+        if(current_start_index >= remArray.length()-1) {
             forward_button.setClickable(false);
+            forward_button.setBackgroundColor(Color.DKGRAY);
+        }
+        else{
+            forward_button.setClickable(true);
+            forward_button.setBackgroundColor(Color.LTGRAY);
         }
     }
 
-    public void getCurrentUsersReminders() {
+
+
+    public void getCurrentUserReminders() {
         Response.Listener<String> r_Listener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -131,26 +156,70 @@ public class RemindersScreen extends AppCompatActivity {
                 try {
                     JSONObject returnObject = new JSONObject(response);
 
+                    AlertDialog.Builder b;
                     if(returnObject.has("success")) {
-                        if (returnObject.getBoolean("success")) {
-                            getRemResult = true;
-                            AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
-                            //b.setMessage("Query Success: (Size = " + returnObject.getInt("result_size") + ")" ).setNeutralButton("Confirm", null).create().show();
 
-                            RemindersScreen.remArray = returnObject.getJSONArray("rem_object");
-                            rem_result_size = returnObject.getInt("result_size");
+                        switch(returnObject.getInt("success")) {
+
+                            case 0:
+                                b = new AlertDialog.Builder(RemindersScreen.this);
+                                b.setMessage("DATABASE ERROR").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        RemindersScreen.this.finish();
+                                    }
+                                }).create().show();
+                                break;
+
+                            case 1:
+                                RemindersScreen.this.remArray = returnObject.getJSONArray("rem_array");
+                                rem_result_size = returnObject.getInt("result_size");
+                                clickabilityUpdate();
+                                updateRemindersDisplay();
+                                break;
+
+                            case 2:
+                                b = new AlertDialog.Builder(RemindersScreen.this);
+                                b.setMessage("You have no reminders.").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        RemindersScreen.this.finish();
+                                    }
+                                }).create().show();
+                                break;
+
+                            case 3:
+                                b = new AlertDialog.Builder(RemindersScreen.this);
+                                b.setMessage("There was a problem saving the result.").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        RemindersScreen.this.finish();
+                                    }
+                                }).create().show();
+                                break;
                         }
-                        else {
-                            AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
-                            b.setMessage("Query Failed").setNeutralButton("Confirm", null).create().show();
-                        }
+
+                    }
+                    else {
+                        b = new AlertDialog.Builder(RemindersScreen.this);
+                        b.setMessage("PHP ERROR").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                RemindersScreen.this.finish();
+                            }
+                        }).create().show();
                     }
                 }
                 catch (JSONException e)
                 {
                     e.printStackTrace();
                     AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
-                    b.setMessage(e.getMessage()).setNeutralButton("Confirm", null).create().show();
+                    b.setMessage(e.getMessage()).setNeutralButton("Confirm", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            RemindersScreen.this.finish();
+                        }
+                    }).create().show();
                 }
 
             }
@@ -183,7 +252,7 @@ public class RemindersScreen extends AppCompatActivity {
                 TextView title_slot_i = (TextView) myrem[i].getChildAt(0);
                 TextView time_slot_i = (TextView) myrem[i].getChildAt(1);
                 title_slot_i.setText(curRem_title);
-                time_slot_i.setText(time_slot_i.getText() + "\t" + curRem_time);
+                time_slot_i.setText("Time:\t" + curRem_time);
 
                 // the second child of the current reminder layout is a layout for the buttons
                 LinearLayout button_layout_i = (LinearLayout) myrem[i].getChildAt(2);
@@ -232,13 +301,5 @@ public class RemindersScreen extends AppCompatActivity {
 
     }
 
-    public void onAdd(View view)
-    {
-        startActivity(new Intent(getApplicationContext(), CreateReminders.class));
-    }
 
-    public void onHome(View view)
-    {
-        finish();
-    }
 }

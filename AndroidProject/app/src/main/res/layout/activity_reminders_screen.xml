@@ -147,8 +147,7 @@
             android:layout_gravity="center_vertical|center_horizontal|fill_horizontal|center|start"
             android:layout_weight="1"
             android:backgroundTint="@android:color/holo_blue_dark"
-            android:onClick="onAdd"
-            android:text="@string/new_reminder_title"
+            android:text="@string/rem_make"
             android:visibility="visible" />
 
         <Button
@@ -159,7 +158,6 @@
             android:layout_gravity="center_vertical|center_horizontal|center|end"
             android:layout_weight="1"
             android:backgroundTint="?android:attr/colorAccent"
-            android:onClick="onHome"
             android:text="@string/back_to_homepage"
             android:visibility="visible" />
 
