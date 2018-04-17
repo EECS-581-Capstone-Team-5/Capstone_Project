@@ -1,4 +1,5 @@
 package capstone18_05.google.developers.httpsconsole.badgerbuddy;
+//package com.journaldev.searchview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ public class BuddySearch extends AppCompatActivity {
         Intent intent = getIntent();
     }
 
+    //cancel button
     public void onCancel(View view) {
         finish();
     }
