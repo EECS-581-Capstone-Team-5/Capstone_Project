@@ -35,7 +35,7 @@ public class AccountHomepage extends AppCompatActivity {
 
                         switch (menuItem.getItemId()) {
                             case R.id.my_buddies:
-                                startActivity(new Intent(getApplicationContext(), Buddies_Screen.class));
+                                startActivity(new Intent(getApplicationContext(), BuddyScreen.class));
                                 break;
                             case R.id.makeNewRem:
                                 startActivity(new Intent(getApplicationContext(), CreateReminders.class));
