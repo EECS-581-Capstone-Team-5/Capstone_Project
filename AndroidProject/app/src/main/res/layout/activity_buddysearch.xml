@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/buddysearch"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:visibility="visible"
-tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySearch">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/buddysearch"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySearch">
 
     <RelativeLayout
         android:id="@+id/BuddySearch"
@@ -20,7 +20,12 @@ tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySea
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search Buddies"
+            android:layout_below="@+id/Search">
+            <requestFocus /> <!-- makes search bar grand Poobah of the page -->
+        </SearchView>
 
         <ListView
             android:id="@+id/listView"
@@ -29,8 +34,7 @@ tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySea
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/search"
-            android:layout_above="@+id/CancelButton" >
-        </ListView>
+            android:layout_above="@+id/CancelButton" />
 
         <Button
             android:id="@+id/CancelButton"
@@ -43,6 +47,7 @@ tools:context="capstone18_05.google.developers.httpsconsole.badgerbuddy.BuddySea
             android:text="@string/search_cancel"
             android:width="170dp"
             android:layout_alignParentBottom="true" />
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

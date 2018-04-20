@@ -27,6 +27,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -37,18 +38,24 @@
         <activity
             android:name=".CreateAccount"
             android:parentActivityName=".StartPage" />
-        <activity android:name=".AccountHomepage"
+        <activity
+            android:name=".AccountHomepage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".CreateReminders" />
-        <activity android:name=".Buddies_Screen"
+        <activity
+            android:name=".Buddies_Screen"
             android:parentActivityName=".AccountHomepage" />
-        <activity android:name=".RemindersScreen"
+        <activity
+            android:name=".RemindersScreen"
             android:parentActivityName=".AccountHomepage" />
-        <activity android:name=".PendingReminders"
+        <activity
+            android:name=".PendingReminders"
             android:parentActivityName=".AccountHomepage" />
-        <activity android:name=".LocationSelection"
+        <activity
+            android:name=".LocationSelection"
             android:parentActivityName=".AccountHomepage" />
-        <activity android:name=".BuddySearch"
+        <activity
+            android:name=".BuddySearch"
             android:parentActivityName=".AccountHomepage" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -65,7 +72,11 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".BuddyScreen"></activity>
+        <activity android:name=".BuddyScreen" />
+        <activity
+            android:name=".list_view_item"
+            android:label="@string/title_activity_list_view_item"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
