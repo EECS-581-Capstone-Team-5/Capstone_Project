@@ -20,7 +20,7 @@ public class CreateReminders extends AppCompatActivity {
 
     private EditText mRemName, mRemDesc;
     private RequestQueue r_queue;
-    private Button save_button, cancel_button;
+    private Button save_button, cancel_button, time_button;
     //private StringRequest stringRequest;
 
     // the database columns for self reminders and buddy reminders
@@ -36,6 +36,7 @@ public class CreateReminders extends AppCompatActivity {
         mRemDesc = findViewById(R.id.newRemDescField);
         save_button = findViewById(R.id.saveButton);
         cancel_button = findViewById(R.id.cancelButton);
+        time_button = findViewById(R.id.newRemTimeButton);
 
         // TODO: add buddy reminder functionality
         save_button.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +106,15 @@ public class CreateReminders extends AppCompatActivity {
                 });
                 cancel_dialog.create().show();
             }
+        });
+
+        time_button.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new TimePickerFragment();
+                newFragment.show(getFragmentManager(), "timePicker");
+            }
+
         });
 
     }
