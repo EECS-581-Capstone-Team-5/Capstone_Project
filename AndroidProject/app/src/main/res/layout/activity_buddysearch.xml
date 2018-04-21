@@ -24,29 +24,46 @@
             android:iconifiedByDefault="false"
             android:queryHint="Search Buddies"
             android:layout_below="@+id/Search">
-            <requestFocus /> <!-- makes search bar grand Poobah of the page -->
+            <!-- makes search bar grand Poobah of the page -->
         </SearchView>
 
         <ListView
             android:id="@+id/listView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_above="@+id/CancelButton"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/search"
-            android:layout_above="@+id/CancelButton" />
+            android:layout_marginBottom="55dp" />
+
+        <Button
+            android:id="@+id/add_buddy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="70dp"
+            android:width="170dp"
+            android:text="Add Buddy" />
 
         <Button
             android:id="@+id/CancelButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_marginBottom="20dp"
-            android:onClick="onCancel"
-            android:text="@string/search_cancel"
             android:width="170dp"
-            android:layout_alignParentBottom="true" />
+            android:onClick="onCancel"
+            android:text="@string/search_cancel" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
 
     </RelativeLayout>
 
