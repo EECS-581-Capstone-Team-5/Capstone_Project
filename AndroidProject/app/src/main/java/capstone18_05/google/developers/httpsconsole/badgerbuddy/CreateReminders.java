@@ -1,10 +1,18 @@
 package capstone18_05.google.developers.httpsconsole.badgerbuddy;
 
+import android.app.AlarmManager;
 import android.app.DialogFragment;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -15,12 +23,17 @@ import com.android.volley.Response;
 //import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.Calendar;
+
 public class CreateReminders extends AppCompatActivity {
 
 
     private EditText mRemName, mRemDesc;
     private RequestQueue r_queue;
     private Button save_button, cancel_button, time_button;
+    private AlarmManager alarmMgr;
+    private PendingIntent alarmIntent;
+    public Calendar calendar;
     //private StringRequest stringRequest;
 
     // the database columns for self reminders and buddy reminders
@@ -48,7 +61,7 @@ public class CreateReminders extends AppCompatActivity {
                 for_user = ""; // irrelevant for self reminders
                 title = mRemName.getText().toString();
                 description = mRemDesc.getText().toString();
-                time = "None Specified";
+                //time = "None Specified";
                 location = "None Specified";
                 approved = "Yes"; // irrelevant for self reminders
 
@@ -81,6 +94,17 @@ public class CreateReminders extends AppCompatActivity {
                 r_queue = Volley.newRequestQueue(getApplicationContext());
                 r_queue.add(save_request);
 
+                IntentFilter filter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
+                BroadcastReceiver b = new AlarmReceiver();
+                registerReceiver(b, filter);
+
+                Context context = CreateReminders.this;
+                alarmMgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(context, AlarmReceiver.class);
+                alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
+                long timedifference = calendar.getTimeInMillis() - System.currentTimeMillis();
+                alarmMgr.set(AlarmManager.RTC_WAKEUP,
+                        SystemClock.elapsedRealtime() + 10000, alarmIntent);
             }
         });
 
@@ -111,12 +135,16 @@ public class CreateReminders extends AppCompatActivity {
         time_button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment newFragment = new TimePickerFragment();
+                DialogFragment newFragment = new TimePickerFragment(CreateReminders.this);
                 newFragment.show(getFragmentManager(), "timePicker");
             }
 
+
         });
 
+
+
     }
+
 
 }
