@@ -79,8 +79,7 @@ public class BuddyScreen extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Intent intent = new Intent(getApplicationContext(), AccountHomepage.class);
-                startActivity(intent);
+                finish();
             }
         });
 

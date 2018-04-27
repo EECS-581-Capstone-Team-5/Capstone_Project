@@ -182,7 +182,8 @@ public class RemindersScreen extends AppCompatActivity {
                                 b.setMessage("You have no reminders.").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) { /* do nothing else */ }
-                                }).create().show();
+                                });
+                                //b.create().show();
                                 break;
 
                             case 3:
@@ -288,32 +289,18 @@ public class RemindersScreen extends AppCompatActivity {
                             public void onResponse(String response) {
 
                                 try {
-                                    JSONObject returnObject = new JSONObject(response);
-
-                                    AlertDialog.Builder b;
-                                    if(returnObject.has("flag")) {
-
-                                        switch(returnObject.getInt("flag")) {
-
-                                            case 0:
-                                                b = new AlertDialog.Builder(RemindersScreen.this);
-                                                b.setMessage("DATABASE ERROR").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(DialogInterface dialog, int which) {
-                                                        RemindersScreen.this.finish();
-                                                    }
-                                                }).create().show();
-                                                break;
-
-                                            case 1:
-                                                RemindersScreen.this.getCurrentUserReminders();
-                                                break;
-                                        }
-
+                                    if(response.equals("success")) {
+                                        AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
+                                        b.setMessage("Reminder Deleted.").setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                RemindersScreen.this.finish();
+                                            }
+                                        }).create().show();
                                     }
-                                    else {
-                                        b = new AlertDialog.Builder(RemindersScreen.this);
-                                        b.setMessage("DATABASE ERROR").setNeutralButton("OK",  new DialogInterface.OnClickListener() {
+                                    else if(response.equals("failure")) {
+                                        AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
+                                        b.setMessage("An Error Occurred.").setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
                                                 RemindersScreen.this.finish();
@@ -321,18 +308,15 @@ public class RemindersScreen extends AppCompatActivity {
                                         }).create().show();
                                     }
                                 }
-                                catch (JSONException e)
-                                {
 
-                                    e.printStackTrace();
+                                catch (Exception e) {
                                     AlertDialog.Builder b = new AlertDialog.Builder(RemindersScreen.this);
-                                    b.setMessage("Return Error: " + e.getMessage()).setNeutralButton("Confirm", new DialogInterface.OnClickListener() {
+                                    b.setMessage(e.getMessage()).setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             RemindersScreen.this.finish();
                                         }
                                     }).create().show();
-
                                 }
 
                             }
