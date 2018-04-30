@@ -19,11 +19,14 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
+        context.startActivity(new Intent(context, RemindersScreen.class));
 
-        Notification notification = intent.getParcelableExtra(NOTIFICATION);
-        int notificationId = intent.getIntExtra(NOTIFICATION_ID, 0);
-        notificationManager.notify(notificationId, notification);
+        //NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        //Notification notification = intent.getParcelableExtra(NOTIFICATION);
+        //int notificationId = intent.getIntExtra(NOTIFICATION_ID, 0);
+        //notificationManager.notify(notificationId, notification);
 
 
     }
