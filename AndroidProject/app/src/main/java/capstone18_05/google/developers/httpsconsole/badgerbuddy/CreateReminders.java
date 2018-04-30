@@ -102,9 +102,8 @@ public class CreateReminders extends AppCompatActivity {
                 alarmMgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
                 Intent intent = new Intent(context, AlarmReceiver.class);
                 alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
-                long timedifference = calendar.getTimeInMillis() - System.currentTimeMillis();
                 alarmMgr.set(AlarmManager.RTC_WAKEUP,
-                        SystemClock.elapsedRealtime() + 10000, alarmIntent);
+                        calendar.getTimeInMillis(), alarmIntent);
             }
         });
 
